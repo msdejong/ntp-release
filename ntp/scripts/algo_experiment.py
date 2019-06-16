@@ -32,48 +32,6 @@ if __name__ == '__main__':
 
     conf = load_conf(path)
 
-
-    conf["experiment"]["test"] = True
-    conf["experiment"]["n_test"] = 5
-    conf["experiment"]["test_active_only"] = True
-
-
-    conf["experiment"]["n_pred"] = 5
-    conf["experiment"]["n_constants"] = 200
-    conf["experiment"]["n_rel"] = 1
-    conf["experiment"]["n_body"] = 3
-    conf["experiment"]["n_rules"] = 5
-    conf["experiment"]["p_normal"] = 0.5
-    conf["experiment"]["p_relationship"] = 1.0
-    conf["experiment"]["order"] = 1
-
-    conf["training"]["num_epochs"] = 1
-    conf["training"]["learning_rate"] = 0.001
-    conf["training"]["lr_decay_type"] = "exp"
-    conf["training"]["lr_decay_rate"] = 0.0003
-    
-    conf["experiment"]["gradient_experiment"] = False
-    conf["model"]["k_max"] = 10
-    # conf["model"]["loss_type"] = "top_k_all_anneal"
-    conf["model"]["loss_type"] = "top_k_all_type"
-    #conf["model"]["loss_type"] = "top_k"
-
-    conf["model"]["loss_parameters"] = {"k": 2}
-    # conf["model"]["loss_parameters"] = {"k_values": [2, 1, 1], "regime_thresholds": [0, 50, 75], "regime_types": ["top_k_all_type", "top_k_all_type", "top_k"]}
-    # conf["model"]["loss_parameters"] = {"k_values": [2, 1], "regime_thresholds": [0, 50], "regime_types": ["top_k_all_type", "top_k_all_type"]}
-    # conf["model"]["loss_parameters"] = {"k_values": [-1, -1], "regime_thresholds": [0, 50], "regime_types": ["all_type", "standard"]}
-
-    curr_path = os.path.dirname(os.path.abspath(__file__))
-    base_data_path = curr_path + "/../../data/synthetic/synth1"
-
-    # test settings
-    # conf["training"]["pos_per_batch"] = 1
-    # conf["model"]["input_size"] = 1
-    # conf["training"]["neg_per_pos"] = 1
-    # # conf["experiment"]["n_constants"] = 20
-    # conf["training"]["num_epochs"] = 1
-    conf["experiment"]["n_runs"] = 4
-
     n_pred = conf["experiment"]["n_pred"]
     n_constants = conf["experiment"]["n_constants"]
     n_rel = conf["experiment"]["n_rel"]
