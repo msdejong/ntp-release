@@ -1,0 +1,7 @@
+.vscode/
+*.pyc
+*.lprof
+*.npy
+*.pyx
+*.v2
+vizdata/
